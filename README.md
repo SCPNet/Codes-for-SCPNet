@@ -1,4 +1,4 @@
-# SCPNet: Semantic Scene Completion on Point Cloud (CVPR 2023 Highlight)
+## SCPNet: Semantic Scene Completion on Point Cloud (CVPR 2023, Highlight)
 
 <img src='./imgs/pipline.png' width=880>
 
@@ -6,7 +6,7 @@
 - **2023-05** Preliminary codes are released.
 - **2023-02** Our SCPNet is accepted by CVPR 2023 (**Highlight**)!
 - **2022-11** Our method ranks **1st** in **SemanticKITTI Semantic Scene Completion Challenge**, with mIoU=36.7. 
--  We provide the source code of SCPNet, it includes a complete sub-network without an encoder-decoder structure and a segmentation sub-network obtained by replacing the cylindrical partition of Cylinder3D with conventional cubic partition.
+- SCPNet is comprised of a novel completion sub-network without an encoder-decoder structure and a segmentation sub-network obtained by replacing the cylindrical partition of Cylinder3D with conventional cubic partition.
 
 
 ## Installation
@@ -56,20 +56,20 @@
 ```
 ## Test
 We take evaluation on the SemanticKITTI test set (single-scan) as example.
-1. Download the pre-trained models and put them in “./model_load_dir”.
-2. Set val_data_loader>imageset: “test” in the configuration file “config/semantickitti-multiscan.yaml”.
+1. Download the pre-trained models and put them in ```./model_load_dir```.
+2. Set val_data_loader>imageset: “test” in the configuration file ```config/semantickitti-multiscan.yaml```.
 3. Generate predictions on the SemanticKITTI test set.
-
-**run** CUDA_VISIBLE_DEVICES=0 python -u test_scpnet_comp.py
-
-The model predictions will be saved in ./out_scpnet/test by default.
+```
+CUDA_VISIBLE_DEVICES=0 python -u test_scpnet_comp.py
+```
+The model predictions will be saved in ```./out_scpnet/test``` by default.
 
 ## Train
-1. Set val_data_loader>imageset: “test” in the configuration file “config/semantickitti-multiscan.yaml”.
+1. Set val_data_loader>imageset: “test” in the configuration file ```config/semantickitti-multiscan.yaml```.
 2. train the network by running the train script
-
-**run** CUDA_VISIBLE_DEVICES=0 python -u train_scpnet_comp.py
-
+```
+CUDA_VISIBLE_DEVICES=0 python -u train_scpnet_comp.py
+```
 
 ## Citation
 
