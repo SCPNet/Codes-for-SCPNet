@@ -1,8 +1,6 @@
-
 # SCPNet: Semantic Scene Completion on Point Cloud (CVPR 2023 Highlight)
 
- The source code of **SCPNet: Semantic Scene Completion on Point Cloud**
-![img|center](./imgs/pipeline.png)
+<img src='./imgs/pipline.png' width=880>
 
 ## News
 - **2023-05** Preliminary codes are released.
@@ -66,7 +64,7 @@ We take evaluation on the SemanticKITTI test set (single-scan) as example.
 
 The model predictions will be saved in ./out_scpnet/test by default.
 
-## Training
+## Train
 1. Set val_data_loader>imageset: “test” in the configuration file “config/semantickitti-multiscan.yaml”.
 2. train the network by running the train script
 
@@ -85,5 +83,5 @@ If you use the codes, please cite the following publication:
 }
 ```
 
-## Acknowledgments
-We thanks for the opensource codebases, [Cylinder3D](https://github.com/xinge008/Cylinder3D), [PVKD](https://github.com/cardwing/Codes-for-PVKD) and [spconv](https://github.com/traveller59/spconv)
+## Acknowledgements
+We thanks for these codebases, including [Cylinder3D](https://github.com/xinge008/Cylinder3D), [PVKD](https://github.com/cardwing/Codes-for-PVKD) and [spconv](https://github.com/traveller59/spconv).
