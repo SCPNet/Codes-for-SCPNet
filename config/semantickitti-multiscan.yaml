@@ -1,0 +1,71 @@
+# Config format schema number
+format_version: 4
+
+###################
+## Model options
+model_params:
+  model_architecture: "cylinder_asym"
+
+  output_shape:
+    - 256
+    - 256
+    - 32
+
+  fea_dim: 7
+  out_fea_dim: 256
+  num_class: 20
+  num_input_features: 32
+  use_norm: True
+  init_size: 32
+
+
+###################
+## Dataset options
+dataset_params:
+  dataset_type: "voxel_dataset"
+  pc_dataset_type: "SemKITTI_sk_multiscan"
+  ignore_label: 255
+  return_test: True
+  fixed_volume_space: True
+  label_mapping: "./config/label_mapping/semantic-kitti-multiscan.yaml"
+  max_volume_space:
+    - 51.2
+    - 25.6
+    - 4.4
+  min_volume_space:
+    - 0
+    - -25.6
+    - -2
+
+
+###################
+## Data_loader options
+train_data_loader:
+  data_path: "/mnt/lustre/share_data/liuyouquan/semantickitti/sequences/"
+  imageset: "train"
+  return_ref: True
+  batch_size: 2
+  shuffle: True
+  num_workers: 12
+
+val_data_loader:
+  data_path: "/mnt/lustre/share_data/liuyouquan/semantickitti/sequences/"
+  imageset: "val"
+#  imageset: "test"
+  return_ref: True
+  batch_size: 1 #2
+  shuffle: False
+  num_workers: 12
+
+
+
+
+###################
+## Train params
+train_params:
+  model_load_path: "./model_load_dir/"
+  model_save_path: "./model_load_dir/"
+  checkpoint_every_n_steps: 4599
+  max_num_epochs: 40
+  eval_every_n_steps: 1917
+  learning_rate: 0.0015
